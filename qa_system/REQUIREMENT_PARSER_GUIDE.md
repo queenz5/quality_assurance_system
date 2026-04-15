@@ -184,7 +184,7 @@ qa_system/data/requirements/
 
 ### LLM 配置
 
-需求解析依赖 LLM（默认使用通义千问），需要在 `.env` 文件中配置：
+需求解析依赖 LLM，需要在 `.env` 文件中配置：
 
 ```env
 LLM_API_KEY=your_api_key

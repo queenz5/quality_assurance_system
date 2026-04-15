@@ -11,11 +11,11 @@
 
 ## 📖 项目简介
 
-智能质量保障系统是一个整合**需求管理**、**测试用例管理**、**缺陷追踪**的全链路质量保障平台。通过集成 **LLM (通义千问)**、**RAG 检索**、**机器学习预测**等 AI/ML 技术，实现需求智能解析、测试用例自动生成、BUG 根因分析、质量趋势预测、知识管理和智能报告生成，全面提升软件质量保障效率。
+智能质量保障系统是一个整合**需求管理**、**测试用例管理**、**缺陷追踪**的全链路质量保障平台。通过集成 **LLM**、**RAG 检索**、**机器学习预测**等 AI/ML 技术，实现需求智能解析、测试用例自动生成、BUG 根因分析、质量趋势预测、知识管理和智能报告生成，全面提升软件质量保障效率。
 
 ### 核心亮点
 
-- 🤖 **AI 驱动**: LangChain + 通义千问实现需求智能解析、用例自动生成、影响分析
+- 🤖 **AI 驱动**: LangChain + LLM实现需求智能解析、用例自动生成、影响分析
 - 🔍 **RAG 混合检索**: FAISS 向量检索 + BM25 关键词检索，支持全链路语义检索
 - 📊 **ML 预测**: scikit-learn 线性回归模型实现 BUG 趋势预测与置信区间分析
 - 🔗 **MCP 协议集成**: 12 个 MCP 工具供 LLM 直接调用 QA 系统数据
@@ -65,7 +65,7 @@
 | **FastAPI** 0.109+ | 高性能异步 Web 框架，自动 OpenAPI/Swagger 文档 |
 | **Pydantic** 2.5+ | 数据验证与序列化 (30+ 数据模型) |
 | **LangChain** 1.2+ | LLM 应用框架，编排需求解析、影响分析等 AI 流程 |
-| **通义千问 (DashScope)** | LLM 推理引擎 (qwen-turbo)，兼容 OpenAI 接口 |
+| **LLM ** | LLM 推理引擎 (qwen-turbo)，兼容 OpenAI 接口 |
 | **scikit-learn** 1.3+ | 机器学习 — LinearRegression 用于 BUG 趋势预测 |
 | **FAISS** 1.7+ | Facebook 向量检索库，语义相似度检索 |
 | **BM25 / rank_bm25** | 关键词检索，与 FAISS 构成混合检索 |
@@ -159,7 +159,7 @@ source venv/bin/activate  # Mac/Linux
 # 安装依赖
 pip install -r requirements.txt
 
-# 配置环境变量 (可选，默认使用通义千问)
+# 配置环境变量 
 cp .env.example .env
 # 编辑 .env 文件，填入你的 API Key
 
@@ -190,13 +190,14 @@ npm run dev
 在 `qa_system/.env` 文件中配置:
 
 ```env
-# 通义千问 API 配置
-DASHSCOPE_API_KEY=your-api-key-here
-DASHSCOPE_MODEL=qwen-turbo
-
-# 或使用 OpenAI 兼容接口
+# LLM API 配置
 OPENAI_API_KEY=your-api-key-here
 OPENAI_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
+OPENAI_MODEL_NAME=qwen-turbo
+
+# 可选
+OPENAI_TEMPERATURE=0.1
+EMBEDDING_MODEL_NAME=text-embedding-v3
 ```
 
 ---
