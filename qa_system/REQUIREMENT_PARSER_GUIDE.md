@@ -14,17 +14,17 @@
 
 ### 方式 1：通过 API 接口
 
-#### 1.1 从文件解析需求
+#### 1.1 分析需求并创建草稿
 
-**API 端点**: `POST /api/requirements/parse-from-file`
+**API 端点**: `POST /api/requirements/analyze-and-create-draft`
 
 **请求示例**:
 ```bash
-curl -X POST http://localhost:8000/api/requirements/parse-from-file \
+curl -X POST http://localhost:8000/api/requirements/analyze-and-create-draft \
   -H "Content-Type: application/json" \
   -d '{
-    "file_path": "/path/to/prd.md",
-    "save_to_data": true
+    "content": "# 用户需求\n\n用户可以通过手机号登录...",
+    "source_name": "用户需求文档"
   }'
 ```
 
@@ -32,11 +32,17 @@ curl -X POST http://localhost:8000/api/requirements/parse-from-file \
 ```json
 {
   "success": true,
-  "parse_summary": "成功解析 3 个模块，8 个功能点",
+  "draft_id": "draft-12345",
+  "source_name": "用户需求文档",
+  "analysis_summary": "成功解析 3 个模块，8 个功能点",
+  "total_issues": 0,
+  "critical_issues": 0,
+  "major_issues": 0,
+  "minor_issues": 0,
   "total_modules": 3,
   "total_function_points": 8,
   "total_requirements": 5,
-  "warnings": [],
+  "issues": [],
   "requirements": [
     {
       "id": "REQ-001",
@@ -44,77 +50,111 @@ curl -X POST http://localhost:8000/api/requirements/parse-from-file \
       "module": "用户管理",
       "sub_module": "登录",
       "priority": "高",
-      "function_points_count": 3
+      "description": "用户登录功能描述",
+      "function_points_count": 3,
+      "function_points": [],
+      "preconditions": [],
+      "postconditions": [],
+      "business_rules": [],
+      "exception_handling": [],
+      "prerequisite_requirements": [],
+      "dependent_requirements": [],
+      "tags": []
     }
   ]
 }
 ```
 
-#### 1.2 从文本解析需求
+#### 1.2 获取草稿列表
 
-**API 端点**: `POST /api/requirements/parse-from-text`
-
-**请求示例**:
-```bash
-curl -X POST http://localhost:8000/api/requirements/parse-from-text \
-  -H "Content-Type: application/json" \
-  -d '{
-    "content": "# 用户需求\n\n用户可以通过手机号登录...",
-    "source_name": "用户需求文档",
-    "save_to_data": true
-  }'
-```
-
-#### 1.3 获取需求索引
-
-**API 端点**: `GET /api/requirements/index`
+**API 端点**: `GET /api/requirements/drafts`
 
 **响应示例**:
 ```json
 {
-  "requirements": [
+  "success": true,
+  "total": 1,
+  "drafts": [
     {
-      "id": "REQ-001",
-      "file": "REQ-001_用户登录功能.md",
-      "module": "用户管理",
-      "title": "用户登录功能",
-      "priority": "高",
-      "status": "待开发",
-      "function_points_count": 3,
-      "tags": ["用户", "认证"]
+      "draft_id": "draft-12345",
+      "source_name": "用户需求文档",
+      "created_at": "2026-04-15T10:00:00",
+      "updated_at": "2026-04-15T10:00:00",
+      "total_requirements": 5
     }
-  ],
-  "modules": ["用户管理", "订单管理"],
-  "last_updated": "2026-04-13T10:00:00"
+  ]
 }
 ```
 
-#### 1.4 获取需求详情
+#### 1.3 发布草稿为正式文档
 
-**API 端点**: `GET /api/requirements/{req_id}`
+**API 端点**: `POST /api/requirements/draft/{draft_id}/publish`
 
-**示例**: `GET /api/requirements/REQ-001`
+**请求示例**:
+```bash
+curl -X POST http://localhost:8000/api/requirements/draft/draft-12345/publish \
+  -H "Content-Type: application/json"
+```
+
+**响应示例**:
+```json
+{
+  "success": true,
+  "message": "草稿已发布为正式文档,共保存 5 个文件",
+  "saved_files": [
+    "/path/to/requirements/用户管理/REQ-001_用户登录功能.md"
+  ]
+}
+```
+
+#### 1.4 获取正式需求列表
+
+**API 端点**: `GET /api/requirements/formal`
+
+**响应示例**:
+```json
+{
+  "success": true,
+  "total": 5,
+  "modules": ["用户管理", "订单管理"],
+  "requirements": [
+    {
+      "file_name": "REQ-001_用户登录功能.md",
+      "title": "用户登录功能",
+      "module": "用户管理",
+      "path": "/path/to/requirements/用户管理/REQ-001_用户登录功能.md",
+      "updated_at": "2026-04-15T10:00:00",
+      "size_kb": 1.2
+    }
+  ]
+}
+```
 
 ### 方式 2：通过 Python 代码
 
 ```python
-from modules.requirement_parser import parse_requirement_from_file, parse_requirement_from_text
+from modules.requirement_analysis_service import RequirementAnalysisService
 
-# 从文件解析
-result = parse_requirement_from_file(
-    file_path="/path/to/prd.md",
-    output_dir="/path/to/output"  # 可选
-)
+# 创建服务实例
+service = RequirementAnalysisService(data_dir="/path/to/data")
 
-print(f"解析了 {result.total_modules} 个模块")
-print(f"识别了 {result.total_function_points} 个功能点")
-print(f"生成了 {len(result.parsed_requirements)} 个需求")
+# 分析和解析需求
+content = "# 用户需求\n\n用户可以通过手机号登录..."
+source_name = "用户需求文档"
 
-# 从文本解析
-result = parse_requirement_from_text(
-    text="# 用户需求\n\n...",
-    source_name="用户需求文档"
-)
+analysis_result = service.analyze_and_parse(content, source_name)
+
+print(f"解析了 {analysis_result.total_modules} 个模块")
+print(f"识别了 {analysis_result.total_function_points} 个功能点")
+print(f"生成了 {len(analysis_result.parsed_requirements)} 个需求")
+
+# 创建草稿
+draft_id = service.create_draft(analysis_result, source_name, "AI自动解析生成")
+print(f"草稿创建成功: {draft_id}")
+
+# 发布为正式文档
+success, saved_files = service.publish_to_formal(draft_id)
+print(f"发布成功: {len(saved_files)} 个文件")
 ```
 
 ## 📂 输出格式

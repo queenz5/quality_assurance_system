@@ -38,8 +38,8 @@ class QARetriever:
         self._bm25_retriever.k = 10
 
         # 2. FAISS 向量检索
-        # 注意：DashScope embedding API 兼容模式还在完善中
-        # 暂时仅使用 BM25，后续可启用向量检索
+        # 当设置了OpenAI环境变量时启用，否则回退到仅使用BM25
+        # 支持混合检索策略，结合关键词和向量检索的优势
         try:
             embeddings = get_embeddings()
             if embeddings:
