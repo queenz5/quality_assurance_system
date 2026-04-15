@@ -1,0 +1,42 @@
+case_type: 边界条件
+created_at: '2026-04-15T11:44:57.934870'
+description: 验证当 Label 标签与多个表单控件关联时，点击标签仅触发第一个表单控件。
+execution_count: 0
+expected_result: Label 标签与多个表单控件关联时，点击标签仅触发第一个表单控件。
+id: TC-BDZJ-003
+module: 表单组件
+preconditions:
+- 页面中存在一个 Label 标签组件，且通过 for 属性关联了多个表单控件
+priority: 中
+requirement_id: REQ-001
+status: 未执行
+steps:
+- action: 打开包含 Label 标签和多个表单控件的页面
+  expected: 页面正常加载，Label 标签和多个表单控件显示在界面上
+  input: ''
+  step_no: 1
+- action: 点击 Label 标签区域
+  expected: 第一个表单控件获得焦点，光标闪烁
+  input: ''
+  step_no: 2
+- action: 在第一个表单控件中输入文本 '测试1'
+  expected: 第一个表单控件显示输入的文本 '测试1'
+  input: 测试1
+  step_no: 3
+- action: 点击页面其他位置
+  expected: 第一个表单控件失去焦点，但输入内容保持不变
+  input: ''
+  step_no: 4
+sub_module: Label 标签组件
+tags:
+- 组件
+- 表单
+- 标签
+- 边界
+test_data:
+  input_values:
+  - 测试1
+  - 测试2
+  label_for: input-field1
+title: Label 标签组件-关联多个表单控件时只触发第一个
+updated_at: '2026-04-15T11:44:57.934870'

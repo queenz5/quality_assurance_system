@@ -1,0 +1,208 @@
+{
+  "module": "基础组件",
+  "prefix": "JCZJ",
+  "last_tc_id": 15,
+  "submodules": {
+    "Icon 图标组件": [
+      "TC-JCZJ-001",
+      "TC-JCZJ-002",
+      "TC-JCZJ-003",
+      "TC-JCZJ-004",
+      "TC-JCZJ-005"
+    ],
+    "Progress 进度条组件": [
+      "TC-JCZJ-006",
+      "TC-JCZJ-007",
+      "TC-JCZJ-008",
+      "TC-JCZJ-009",
+      "TC-JCZJ-010",
+      "TC-JCZJ-011",
+      "TC-JCZJ-012",
+      "TC-JCZJ-013",
+      "TC-JCZJ-014",
+      "TC-JCZJ-015"
+    ]
+  },
+  "test_cases": [
+    {
+      "id": "TC-JCZJ-001",
+      "file": "Icon 图标组件/TC-JCZJ-001_Icon 图标组件-图标类型展示正常流程.yaml",
+      "requirement_id": "REQ-003",
+      "title": "Icon 图标组件-图标类型展示正常流程",
+      "status": "未执行",
+      "priority": "高",
+      "case_type": "基本功能",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:46:20.719962",
+      "submodule": "Icon 图标组件"
+    },
+    {
+      "id": "TC-JCZJ-002",
+      "file": "Icon 图标组件/TC-JCZJ-002_Icon 图标组件-自定义大小和颜色正常流程.yaml",
+      "requirement_id": "REQ-003",
+      "title": "Icon 图标组件-自定义大小和颜色正常流程",
+      "status": "未执行",
+      "priority": "高",
+      "case_type": "基本功能",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:46:20.719962",
+      "submodule": "Icon 图标组件"
+    },
+    {
+      "id": "TC-JCZJ-003",
+      "file": "Icon 图标组件/TC-JCZJ-003_Icon 图标组件-无效图标类型异常处理.yaml",
+      "requirement_id": "REQ-003",
+      "title": "Icon 图标组件-无效图标类型异常处理",
+      "status": "未执行",
+      "priority": "高",
+      "case_type": "异常情况",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:46:20.719962",
+      "submodule": "Icon 图标组件"
+    },
+    {
+      "id": "TC-JCZJ-004",
+      "file": "Icon 图标组件/TC-JCZJ-004_Icon 图标组件-边界值测试-图标大小.yaml",
+      "requirement_id": "REQ-003",
+      "title": "Icon 图标组件-边界值测试-图标大小",
+      "status": "未执行",
+      "priority": "高",
+      "case_type": "边界条件",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:46:20.719962",
+      "submodule": "Icon 图标组件"
+    },
+    {
+      "id": "TC-JCZJ-005",
+      "file": "Icon 图标组件/TC-JCZJ-005_Icon 图标组件-边界值测试-颜色格式.yaml",
+      "requirement_id": "REQ-003",
+      "title": "Icon 图标组件-边界值测试-颜色格式",
+      "status": "未执行",
+      "priority": "高",
+      "case_type": "边界条件",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:46:20.719962",
+      "submodule": "Icon 图标组件"
+    },
+    {
+      "id": "TC-JCZJ-006",
+      "file": "Progress 进度条组件/TC-JCZJ-006_Progress-进度条组件初始化显示.yaml",
+      "requirement_id": "REQ-002",
+      "title": "Progress-进度条组件初始化显示",
+      "status": "未执行",
+      "priority": "高",
+      "case_type": "基本功能",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:54:26.198670",
+      "submodule": "Progress 进度条组件"
+    },
+    {
+      "id": "TC-JCZJ-007",
+      "file": "Progress 进度条组件/TC-JCZJ-007_Progress-设置进度百分比.yaml",
+      "requirement_id": "REQ-002",
+      "title": "Progress-设置进度百分比",
+      "status": "未执行",
+      "priority": "高",
+      "case_type": "基本功能",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:54:26.198670",
+      "submodule": "Progress 进度条组件"
+    },
+    {
+      "id": "TC-JCZJ-008",
+      "file": "Progress 进度条组件/TC-JCZJ-008_Progress-进度超出范围处理.yaml",
+      "requirement_id": "REQ-002",
+      "title": "Progress-进度超出范围处理",
+      "status": "未执行",
+      "priority": "中",
+      "case_type": "异常情况",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:54:26.198670",
+      "submodule": "Progress 进度条组件"
+    },
+    {
+      "id": "TC-JCZJ-009",
+      "file": "Progress 进度条组件/TC-JCZJ-009_Progress-进度条样式自定义.yaml",
+      "requirement_id": "REQ-002",
+      "title": "Progress-进度条样式自定义",
+      "status": "未执行",
+      "priority": "高",
+      "case_type": "基本功能",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:54:26.198670",
+      "submodule": "Progress 进度条组件"
+    },
+    {
+      "id": "TC-JCZJ-010",
+      "file": "Progress 进度条组件/TC-JCZJ-010_Progress-动画效果验证.yaml",
+      "requirement_id": "REQ-002",
+      "title": "Progress-动画效果验证",
+      "status": "未执行",
+      "priority": "高",
+      "case_type": "基本功能",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:54:26.198670",
+      "submodule": "Progress 进度条组件"
+    },
+    {
+      "id": "TC-JCZJ-011",
+      "file": "Progress 进度条组件/TC-JCZJ-011_Progress-无效输入处理.yaml",
+      "requirement_id": "REQ-002",
+      "title": "Progress-无效输入处理",
+      "status": "未执行",
+      "priority": "中",
+      "case_type": "异常情况",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:54:26.198670",
+      "submodule": "Progress 进度条组件"
+    },
+    {
+      "id": "TC-JCZJ-012",
+      "file": "Progress 进度条组件/TC-JCZJ-012_Progress-边界值测试-最小值.yaml",
+      "requirement_id": "REQ-002",
+      "title": "Progress-边界值测试-最小值",
+      "status": "未执行",
+      "priority": "中",
+      "case_type": "边界条件",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:54:26.198670",
+      "submodule": "Progress 进度条组件"
+    },
+    {
+      "id": "TC-JCZJ-013",
+      "file": "Progress 进度条组件/TC-JCZJ-013_Progress-边界值测试-最大值.yaml",
+      "requirement_id": "REQ-002",
+      "title": "Progress-边界值测试-最大值",
+      "status": "未执行",
+      "priority": "中",
+      "case_type": "边界条件",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:54:26.198670",
+      "submodule": "Progress 进度条组件"
+    },
+    {
+      "id": "TC-JCZJ-014",
+      "file": "Progress 进度条组件/TC-JCZJ-014_Progress-边界值测试-临界值.yaml",
+      "requirement_id": "REQ-002",
+      "title": "Progress-边界值测试-临界值",
+      "status": "未执行",
+      "priority": "中",
+      "case_type": "边界条件",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:54:26.198670",
+      "submodule": "Progress 进度条组件"
+    },
+    {
+      "id": "TC-JCZJ-015",
+      "file": "Progress 进度条组件/TC-JCZJ-015_Progress-场景法-完整流程.yaml",
+      "requirement_id": "REQ-002",
+      "title": "Progress-场景法-完整流程",
+      "status": "未执行",
+      "priority": "高",
+      "case_type": "场景法",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:54:26.198670",
+      "submodule": "Progress 进度条组件"
+    }
+  ]
+}

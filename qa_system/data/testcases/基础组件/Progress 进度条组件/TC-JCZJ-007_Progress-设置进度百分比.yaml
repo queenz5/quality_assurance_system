@@ -1,0 +1,29 @@
+case_type: 基本功能
+created_at: '2026-04-15T11:54:26.185866'
+description: 验证 Progress 组件可以正确显示自定义进度百分比
+execution_count: 0
+expected_result: Progress 组件能根据设置的 progress 值正确显示进度
+id: TC-JCZJ-007
+module: 基础组件
+preconditions:
+- 用户进入小程序页面，包含 Progress 组件
+priority: 高
+requirement_id: REQ-002
+status: 未执行
+steps:
+- action: 设置 Progress 组件的 progress 属性为 50%
+  expected: Progress 组件更新进度值
+  input: 'progress: 50'
+  step_no: 1
+- action: 刷新页面
+  expected: Progress 组件显示 50% 的进度条
+  input: ''
+  step_no: 2
+sub_module: Progress 进度条组件
+tags:
+- 组件
+- 进度条
+test_data:
+  progress: '50'
+title: Progress-设置进度百分比
+updated_at: '2026-04-15T11:54:26.185866'

@@ -1,0 +1,17 @@
+id: BUG-004
+title: 订单列表分页显示数量不正确
+description: 订单列表每页显示数量设置为20，但实际只返回了15条数据
+test_case_id: null
+requirement_id: REQ-005
+module: 订单管理
+severity: 轻微
+status: 已修复
+root_cause: 数据库查询时使用了LEFT JOIN导致部分订单被过滤
+root_cause_category: 编码错误
+fix_solution: 修改查询语句，使用子查询获取订单商品数量
+fixed_in_version: v1.0.2
+assignee: 王五
+reporter: 赵六
+created_at: "2026-03-28T15:00:00"
+updated_at: "2026-04-06T09:00:00"
+fixed_at: "2026-04-06T09:00:00"

@@ -1,0 +1,17 @@
+id: BUG-003
+title: 密码重置链接可重复使用
+description: 密码重置链接在使用后未失效，可以被重复使用来修改密码
+test_case_id: null
+requirement_id: REQ-003
+module: 用户管理
+severity: 严重
+status: 未修复
+root_cause: 重置令牌使用后未从数据库中删除或标记为已使用
+root_cause_category: 设计缺陷
+fix_solution: null
+fixed_in_version: null
+assignee: 张三
+reporter: 李四
+created_at: "2026-04-01T11:00:00"
+updated_at: "2026-04-08T16:30:00"
+fixed_at: null

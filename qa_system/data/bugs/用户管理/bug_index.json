@@ -1,0 +1,25 @@
+{
+  "module": "用户管理",
+  "bugs": [
+    {
+      "id": "BUG-001",
+      "file": "BUG-001_登录锁定机制未生效.yaml",
+      "test_case_id": "TC-002",
+      "requirement_id": "REQ-001",
+      "title": "登录失败锁定机制未生效",
+      "severity": "严重",
+      "status": "已修复",
+      "assignee": "张三"
+    },
+    {
+      "id": "BUG-003",
+      "file": "BUG-003_密码重置链接可重复使用.yaml",
+      "test_case_id": null,
+      "requirement_id": "REQ-003",
+      "title": "密码重置链接可重复使用",
+      "severity": "严重",
+      "status": "未修复",
+      "assignee": "张三"
+    }
+  ]
+}

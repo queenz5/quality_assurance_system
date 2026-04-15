@@ -1,0 +1,12 @@
+{
+  "modules": {
+    "表单组件": {
+      "prefix": "BDZJ",
+      "last_tc_id": 3
+    },
+    "基础组件": {
+      "prefix": "JCZJ",
+      "last_tc_id": 15
+    }
+  }
+}

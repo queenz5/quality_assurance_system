@@ -1,0 +1,25 @@
+case_type: 边界条件
+created_at: '2026-04-15T11:54:26.194611'
+description: 验证当设置的进度为 99% 时，组件显示正确
+execution_count: 0
+expected_result: 当设置的进度为 99% 时，组件显示接近满进度条
+id: TC-JCZJ-014
+module: 基础组件
+preconditions:
+- 用户进入小程序页面，包含 Progress 组件
+priority: 中
+requirement_id: REQ-002
+status: 未执行
+steps:
+- action: 设置 Progress 组件的 progress 属性为 99%
+  expected: 组件显示接近满进度条
+  input: 'progress: 99'
+  step_no: 1
+sub_module: Progress 进度条组件
+tags:
+- 组件
+- 进度条
+test_data:
+  progress: '99'
+title: Progress-边界值测试-临界值
+updated_at: '2026-04-15T11:54:26.194611'

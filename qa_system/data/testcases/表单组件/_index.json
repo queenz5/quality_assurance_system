@@ -1,0 +1,50 @@
+{
+  "module": "表单组件",
+  "prefix": "BDZJ",
+  "last_tc_id": 3,
+  "submodules": {
+    "Label 标签组件": [
+      "TC-BDZJ-001",
+      "TC-BDZJ-002",
+      "TC-BDZJ-003"
+    ]
+  },
+  "test_cases": [
+    {
+      "id": "TC-BDZJ-001",
+      "file": "Label 标签组件/TC-BDZJ-001_Label 标签组件-点击标签区域触发关联表单控件.yaml",
+      "requirement_id": "REQ-001",
+      "title": "Label 标签组件-点击标签区域触发关联表单控件",
+      "status": "未执行",
+      "priority": "高",
+      "case_type": "基本功能",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:44:57.936250",
+      "submodule": "Label 标签组件"
+    },
+    {
+      "id": "TC-BDZJ-002",
+      "file": "Label 标签组件/TC-BDZJ-002_Label 标签组件-未关联表单控件时点击无效.yaml",
+      "requirement_id": "REQ-001",
+      "title": "Label 标签组件-未关联表单控件时点击无效",
+      "status": "未执行",
+      "priority": "中",
+      "case_type": "异常情况",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:44:57.936250",
+      "submodule": "Label 标签组件"
+    },
+    {
+      "id": "TC-BDZJ-003",
+      "file": "Label 标签组件/TC-BDZJ-003_Label 标签组件-关联多个表单控件时只触发第一个.yaml",
+      "requirement_id": "REQ-001",
+      "title": "Label 标签组件-关联多个表单控件时只触发第一个",
+      "status": "未执行",
+      "priority": "中",
+      "case_type": "边界条件",
+      "bugs_found": [],
+      "updated_at": "2026-04-15T11:44:57.936250",
+      "submodule": "Label 标签组件"
+    }
+  ]
+}

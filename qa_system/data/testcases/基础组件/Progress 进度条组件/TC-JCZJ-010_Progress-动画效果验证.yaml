@@ -1,0 +1,34 @@
+case_type: 基本功能
+created_at: '2026-04-15T11:54:26.190054'
+description: 验证 Progress 组件支持动画效果，并在动画完成后触发事件
+execution_count: 0
+expected_result: Progress 组件支持动画效果，并在动画完成后触发事件
+id: TC-JCZJ-010
+module: 基础组件
+preconditions:
+- 用户进入小程序页面，包含 Progress 组件
+priority: 高
+requirement_id: REQ-002
+status: 未执行
+steps:
+- action: 设置 Progress 组件的 animation 属性为 true
+  expected: 组件开始播放动画
+  input: 'animation: true'
+  step_no: 1
+- action: 等待动画完成
+  expected: 动画结束后，进度条达到目标值
+  input: ''
+  step_no: 2
+- action: 检查动画完成事件监听
+  expected: 触发 animation-end 事件并执行回调函数
+  input: ''
+  step_no: 3
+sub_module: Progress 进度条组件
+tags:
+- 组件
+- 进度条
+- 动画
+test_data:
+  animation: 'true'
+title: Progress-动画效果验证
+updated_at: '2026-04-15T11:54:26.190054'

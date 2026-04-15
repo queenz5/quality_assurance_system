@@ -1,0 +1,29 @@
+case_type: 异常情况
+created_at: '2026-04-15T11:54:26.191720'
+description: 验证当设置的进度值不是数字时，组件是否能正确处理
+execution_count: 0
+expected_result: 当设置的进度值不是数字时，组件不显示进度条
+id: TC-JCZJ-011
+module: 基础组件
+preconditions:
+- 用户进入小程序页面，包含 Progress 组件
+priority: 中
+requirement_id: REQ-002
+status: 未执行
+steps:
+- action: 设置 Progress 组件的 progress 属性为 'abc'
+  expected: 组件不显示进度条
+  input: 'progress: ''abc'''
+  step_no: 1
+- action: 设置 Progress 组件的 progress 属性为 null
+  expected: 组件不显示进度条
+  input: 'progress: null'
+  step_no: 2
+sub_module: Progress 进度条组件
+tags:
+- 组件
+- 进度条
+test_data:
+  progress: 'null'
+title: Progress-无效输入处理
+updated_at: '2026-04-15T11:54:26.191720'

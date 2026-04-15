@@ -1,0 +1,29 @@
+{
+  "last_req_id": 3,
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Label 标签组件",
+      "module": "表单组件",
+      "file": "REQ-001_Label 标签组件.md",
+      "created_at": "2026-04-15T11:39:17.809531",
+      "updated_at": "2026-04-15T11:39:17.809532"
+    },
+    {
+      "id": "REQ-002",
+      "title": "Progress 进度条组件",
+      "module": "基础组件",
+      "file": "REQ-002_Progress 进度条组件.md",
+      "created_at": "2026-04-15T11:40:17.853564",
+      "updated_at": "2026-04-15T11:40:17.853565"
+    },
+    {
+      "id": "REQ-003",
+      "title": "Icon 图标组件",
+      "module": "基础组件",
+      "file": "REQ-003_Icon 图标组件.md",
+      "created_at": "2026-04-15T11:42:22.744339",
+      "updated_at": "2026-04-15T11:42:22.744344"
+    }
+  ]
+}

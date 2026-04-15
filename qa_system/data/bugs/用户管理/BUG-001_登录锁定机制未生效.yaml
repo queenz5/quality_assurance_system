@@ -1,0 +1,17 @@
+id: BUG-001
+title: 登录失败锁定机制未生效
+description: 连续输入错误密码超过5次后，账号未被锁定，仍可继续尝试登录
+test_case_id: TC-002
+requirement_id: REQ-001
+module: 用户管理
+severity: 严重
+status: 已修复
+root_cause: 登录接口未实现失败计数逻辑，前端有计数但后端未校验
+root_cause_category: 编码错误
+fix_solution: 在登录接口中增加失败计数，使用Redis记录失败次数，超过5次锁定30分钟
+fixed_in_version: v1.0.1
+assignee: 张三
+reporter: 李四
+created_at: "2026-03-20T13:15:00"
+updated_at: "2026-04-05T10:00:00"
+fixed_at: "2026-04-05T10:00:00"

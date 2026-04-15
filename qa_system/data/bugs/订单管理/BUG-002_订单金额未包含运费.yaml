@@ -1,0 +1,17 @@
+id: BUG-002
+title: 订单金额计算未包含运费
+description: 创建订单时，订单总额只计算了商品金额，未加上运费，导致用户支付金额不足
+test_case_id: TC-004
+requirement_id: REQ-004
+module: 订单管理
+severity: 一般
+status: 修复中
+root_cause: 订单金额计算函数中遗漏了运费字段
+root_cause_category: 编码错误
+fix_solution: 在订单金额计算中增加运费字段，总金额 = 商品金额 + 运费 - 优惠
+fixed_in_version: null
+assignee: 王五
+reporter: 赵六
+created_at: "2026-03-25T09:30:00"
+updated_at: "2026-04-08T14:00:00"
+fixed_at: null

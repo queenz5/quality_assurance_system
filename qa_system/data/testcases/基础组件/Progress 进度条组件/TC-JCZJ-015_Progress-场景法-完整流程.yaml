@@ -1,0 +1,48 @@
+case_type: 场景法
+created_at: '2026-04-15T11:54:26.195482'
+description: 验证 Progress 组件在实际使用中的完整流程
+execution_count: 0
+expected_result: Progress 组件在实际使用中能按照预期展示进度、样式、动画及事件
+id: TC-JCZJ-015
+module: 基础组件
+preconditions:
+- 用户进入小程序页面，包含 Progress 组件
+priority: 高
+requirement_id: REQ-002
+status: 未执行
+steps:
+- action: 打开小程序页面
+  expected: 页面加载完成
+  input: ''
+  step_no: 1
+- action: 设置 Progress 组件的 progress 属性为 50%
+  expected: 组件显示 50% 的进度条
+  input: 'progress: 50'
+  step_no: 2
+- action: '设置 Progress 组件的 color 属性为 #00FF00'
+  expected: 组件颜色变为绿色
+  input: 'color: #00FF00'
+  step_no: 3
+- action: 设置 Progress 组件的 animation 属性为 true
+  expected: 组件开始播放动画
+  input: 'animation: true'
+  step_no: 4
+- action: 等待动画完成
+  expected: 动画结束后，进度条达到目标值
+  input: ''
+  step_no: 5
+- action: 检查 animation-end 事件
+  expected: 触发 animation-end 事件并执行回调函数
+  input: ''
+  step_no: 6
+sub_module: Progress 进度条组件
+tags:
+- 组件
+- 进度条
+- 动画
+test_data:
+  animation: 'true'
+  color: '#00FF00'
+  progress: '50'
+title: Progress-场景法-完整流程
+updated_at: '2026-04-15T11:54:26.195482'

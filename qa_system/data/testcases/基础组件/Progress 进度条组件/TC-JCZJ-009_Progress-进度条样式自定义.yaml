@@ -1,0 +1,41 @@
+case_type: 基本功能
+created_at: '2026-04-15T11:54:26.188346'
+description: 验证 Progress 组件支持自定义颜色、圆角、线宽和字体
+execution_count: 0
+expected_result: Progress 组件能根据配置项正确显示自定义样式
+id: TC-JCZJ-009
+module: 基础组件
+preconditions:
+- 用户进入小程序页面，包含 Progress 组件
+priority: 高
+requirement_id: REQ-002
+status: 未执行
+steps:
+- action: '设置 Progress 组件的 color 属性为 #FF0000'
+  expected: 组件颜色变为红色
+  input: 'color: #FF0000'
+  step_no: 1
+- action: 设置 Progress 组件的 radius 属性为 10
+  expected: 组件圆角变为 10px
+  input: 'radius: 10'
+  step_no: 2
+- action: 设置 Progress 组件的 stroke-width 属性为 6
+  expected: 组件线宽变为 6px
+  input: 'stroke-width: 6'
+  step_no: 3
+- action: 设置 Progress 组件的 font-size 属性为 14
+  expected: 组件字体大小变为 14px
+  input: 'font-size: 14'
+  step_no: 4
+sub_module: Progress 进度条组件
+tags:
+- 组件
+- 进度条
+- 样式
+test_data:
+  color: '#FF0000'
+  font-size: '14'
+  radius: '10'
+  stroke-width: '6'
+title: Progress-进度条样式自定义
+updated_at: '2026-04-15T11:54:26.188346'

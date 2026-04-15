@@ -1,0 +1,25 @@
+{
+  "module": "订单管理",
+  "bugs": [
+    {
+      "id": "BUG-002",
+      "file": "BUG-002_订单金额未包含运费.yaml",
+      "test_case_id": "TC-004",
+      "requirement_id": "REQ-004",
+      "title": "订单金额计算未包含运费",
+      "severity": "一般",
+      "status": "修复中",
+      "assignee": "王五"
+    },
+    {
+      "id": "BUG-004",
+      "file": "BUG-004_订单列表分页数量不正确.yaml",
+      "test_case_id": null,
+      "requirement_id": "REQ-005",
+      "title": "订单列表分页显示数量不正确",
+      "severity": "轻微",
+      "status": "已修复",
+      "assignee": "王五"
+    }
+  ]
+}
